@@ -12,10 +12,25 @@ export default class Counter extends Component {
     return (
       <>
         <h1>{this.props.name}</h1>
-        <button>-</button>
+        <button
+          onClick={() => {
+            this.calcCount(-1);
+          }}
+        >
+          -
+        </button>
         <span>{this.state.number}</span>
-        <button>+</button>
+        <button
+          onClick={() => {
+            this.calcCount(1);
+          }}
+        >
+          +
+        </button>
       </>
     );
+  }
+  calcCount(num) {
+    this.setState({ number: this.state.number + num });
   }
 }
