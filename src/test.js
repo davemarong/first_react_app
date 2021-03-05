@@ -1,16 +1,16 @@
 import React, { useState } from "react";
 
-export default function CounterHooks({ startCount }) {
-  const [state, setState] = useState({ count: startCount });
+export default function CounterHooks({ initialCount }) {
+  const [state, setState] = useState({ count: initialCount });
   return (
-    <>
-      <h1>CounterHooks</h1>
+    <div>
       <button
         onClick={() => {
           setState({ count: state.count - 1 });
         }}
       >
-        -
+        {" "}
+        -{" "}
       </button>
       <span>{state.count}</span>
       <button
@@ -20,6 +20,6 @@ export default function CounterHooks({ startCount }) {
       >
         +
       </button>
-    </>
+    </div>
   );
 }
